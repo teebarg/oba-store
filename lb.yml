@@ -1,0 +1,35 @@
+log:
+    level: DEBUG
+
+http:
+    routers:
+        frontend:
+            rule: PathPrefix(`/`)
+            service: frontend
+        backend:
+            rule: PathPrefix(`/api`)
+            service: backend
+        admin:
+            rule: PathPrefix(`/admin`)
+            service: backend
+        adminer:
+            rule: PathPrefix(`/adminer`)
+            service: adminer
+
+    services:
+        frontend:
+            loadBalancer:
+                servers:
+                    - url: "http://frontend:8000"
+        backend:
+            loadBalancer:
+                servers:
+                    - url: "http://backend:9000"
+        admin:
+            loadBalancer:
+                servers:
+                    - url: "http://backend:7001"
+        adminer:
+            loadBalancer:
+                servers:
+                    - url: "http://adminer:8080"

@@ -16,6 +16,3 @@ COPY . .
 EXPOSE 9000
 EXPOSE 7000
 EXPOSE 7001
-
-# Start the Medusa server
-CMD ["yarn", "start"]

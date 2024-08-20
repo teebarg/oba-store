@@ -15,6 +15,7 @@ backend/node_modules
 
 frontend/.env
 backend/.env
+.env
 
 # Production build outputs
 frontend/.next

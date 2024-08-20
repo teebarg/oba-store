@@ -18,6 +18,3 @@ COPY . .
 # Expose the port the app will run on
 EXPOSE 3000
 EXPOSE 8000
-
-# Start the Next.js app
-CMD ["yarn", "start"]
